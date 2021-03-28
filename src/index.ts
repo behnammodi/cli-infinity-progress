@@ -1,25 +1,64 @@
 const colors = require('colors');
 const cliCursor = require('cli-cursor');
-
-const WIDTH: number = 60;
-const FRAME: number = 1000 / 25;
-const INDICATOR_SIZE = 20;
-
 interface CLIInfinityProgress {
+  size: number;
+  barSize: number;
+  refreshRate: number;
   currentIndex: number;
   intervalId: null | ReturnType<typeof setTimeout>;
-  render(): void;
+  setSize(size: number): void;
+  setBarSize(size: number): void;
+  setRefreshRate(rate: number): void;
   start(): void;
+  remove(): void;
   stop(): void;
 }
 
+const write = (content: string): void => void process.stdout.write(content);
+
 class CLIInfinityProgress implements CLIInfinityProgress {
-  currentIndex = 0;
+  #size = 60;
+  #barSize = 20;
+  #refreshRate = 1000 / 25;
+  #currentIndex = 0;
+  #intervalId;
 
-  constructor() {}
+  setSize(size = 60) {
+    this.#size = size;
+  }
 
-  render() {
-    let leftSize = this.currentIndex - INDICATOR_SIZE;
+  setBarSize(size = 20) {
+    this.#barSize = size;
+  }
+
+  setRefreshRate(rate = 1000 / 25) {
+    this.#refreshRate = rate;
+  }
+
+  start() {
+    cliCursor.hide();
+    this.#currentIndex = 0;
+    clearInterval(this.#intervalId);
+    this.#intervalId = setInterval(this.render.bind(this), this.#refreshRate);
+  }
+
+  remove() {
+    const clean = true;
+    this.reset(clean);
+  }
+
+  stop() {
+    this.reset();
+  }
+
+  private reset(clean: boolean = false) {
+    clearInterval(this.#intervalId);
+    write(clean ? '\r' : '\n');
+    cliCursor.show();
+  }
+
+  private render() {
+    let leftSize = this.#currentIndex - this.#barSize;
     let left = '';
     if (leftSize > 0) {
       left = '🀆'.repeat(leftSize);
@@ -27,7 +66,7 @@ class CLIInfinityProgress implements CLIInfinityProgress {
       leftSize = 0;
     }
 
-    let rightSize = WIDTH - this.currentIndex;
+    let rightSize = this.#size - this.#currentIndex;
     let right = '';
     if (rightSize > 0) {
       right = '🀆'.repeat(rightSize);
@@ -35,27 +74,14 @@ class CLIInfinityProgress implements CLIInfinityProgress {
       rightSize = 0;
     }
 
-    const dots = '🀫'.repeat(WIDTH - (leftSize + rightSize));
+    const dots = '🀫'.repeat(this.#size - (leftSize + rightSize));
 
-    this.currentIndex++;
-    if (this.currentIndex > WIDTH + INDICATOR_SIZE) {
-      this.currentIndex = 0;
+    this.#currentIndex++;
+    if (this.#currentIndex > this.#size + this.#barSize) {
+      this.#currentIndex = 0;
     }
 
-    // @ts-ignore
-    process.stdout.write(
-      colors.green(`\r${colors.gray(left)}${dots}${colors.gray(right)}`)
-    );
-  }
-
-  start() {
-    cliCursor.hide();
-    this.intervalId = setInterval(this.render.bind(this), FRAME);
-  }
-
-  stop() {
-    clearInterval(this.intervalId);
-    cliCursor.show();
+    write(colors.green(`\r${colors.gray(left)}${dots}${colors.gray(right)}`));
   }
 }
 

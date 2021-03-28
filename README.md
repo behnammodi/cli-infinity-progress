@@ -8,7 +8,7 @@
 npm install cli-infinity-progress
 ```
 
-# Use
+# Usage
 
 ```js
 const CLIInfinityProgress = require('cli-infinity-progress');
@@ -17,16 +17,21 @@ const progress = new CLIInfinityProgress();
 progress.start();
 ```
 
-# Stop:
+## Methods:
 
-```js
-progress.stop();
-```
+| Name                               | Return | Desc                                  |
+| ---------------------------------- | ------ | ------------------------------------- |
+| progress.setSize(60)               | void   | Set progress size default is 60       |
+| progress.setBarSize(20)            | void   | Set bar size default is 20            |
+| progress.setRefreshRate(1000 / 25) | void   | Set refresh rate default is 1000 / 25 |
+| progress.start()                   | void   | Start progress                        |
+| progress.remove()                  | void   | Remove progress from terminal         |
+| progress.stop()                    | void   | Stop progress from terminal           |
+|                                    |        |                                       |
 
-# Road map:
+## Road map:
 
 - add prefix and postfix on progress
-- color as option
-- speed as option
-- progress's size as option
-- indicator's size as option
+- set prefix and postfix color
+- set bar color
+- add an event when indicator arrived to end
