@@ -24,14 +24,23 @@ class CLIInfinityProgress implements CLIInfinityProgress {
   #intervalId;
 
   setSize(size = 60) {
+    if (size < 1) {
+      throw 'setSize: size must be greater than 0';
+    }
     this.#size = size;
   }
 
   setBarSize(size = 20) {
+    if (size < 1) {
+      throw 'setBarSize: size must be greater than 0';
+    }
     this.#barSize = size;
   }
 
   setRefreshRate(rate = 1000 / 25) {
+    if (rate < 1000 / 60) {
+      throw `setRefreshRate: rate must be greater than ${1000 / 60}`;
+    }
     this.#refreshRate = rate;
   }
 
