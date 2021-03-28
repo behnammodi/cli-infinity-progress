@@ -24,6 +24,8 @@
   },
   "homepage": "https://github.com/behnammodi/cli-infinity-progress#readme",
   "keywords": [
+    "indeterminate",
+    "infinity",
     "cli",
     "tty",
     "terminal",
