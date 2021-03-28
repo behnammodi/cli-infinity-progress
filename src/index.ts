@@ -50,7 +50,6 @@ class CLIInfinityProgress implements CLIInfinityProgress {
 
   start() {
     cliCursor.hide();
-    process.stdout.write('\n');
     this.intervalId = setInterval(this.render.bind(this), FRAME);
   }
 

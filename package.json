@@ -7,8 +7,8 @@
   "scripts": {
     "test": "node ./index.test",
     "build": "tsc",
-    "start": "npm run build && node ./index.js",
-    "format": "prettier ./src --write --ignore-unknown",
+    "start": "npm run build && npm run test",
+    "format": "prettier ./**.* --write --ignore-unknown",
     "preversion": "npm run test && npm run format",
     "version": "npm run build",
     "postversion": "git push && git push --tags && npm publish"

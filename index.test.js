@@ -2,7 +2,7 @@ const CLIInfinityProgress = require('./index');
 const { delay } = require('tlence');
 
 (async () => {
-  console.log('Test start and stop after 5s')
+  console.log('Test start and stop after 5s');
   const progress1 = new CLIInfinityProgress();
   progress1.start();
 
