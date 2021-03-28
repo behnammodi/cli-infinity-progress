@@ -90,7 +90,7 @@ class CLIInfinityProgress implements CLIInfinityProgress {
       this.#currentIndex = 0;
     }
 
-    write(colors.green(`\r${colors.gray(left)}${dots}${colors.gray(right)}`));
+    write(`\r${colors.gray(left)}${colors.green(dots)}${colors.gray(right)}`);
   }
 }
 
