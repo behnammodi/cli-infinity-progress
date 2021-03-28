@@ -53,7 +53,7 @@ class CLIInfinityProgress implements CLIInfinityProgress {
 
   private reset(clean: boolean = false) {
     clearInterval(this.#intervalId);
-    write(clean ? '\r' : '\n');
+    write(clean ? '\r ' : '\n');
     cliCursor.show();
   }
 
