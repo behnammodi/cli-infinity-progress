@@ -10,7 +10,11 @@ src
 
 .prettierrc.js
 
+commitlint.config.js
+
 index.test.js
+
+LICENSE
 
 lint-staged.config.js
 
