@@ -26,7 +26,7 @@ progress.start();
 | progress.setRefreshRate(1000 / 25) | void   | Set refresh rate default is 1000 / 25 |
 | progress.start()                   | void   | Start progress                        |
 | progress.remove()                  | void   | Remove progress from terminal         |
-| progress.stop()                    | void   | Stop progress from terminal           |
+| progress.stop()                    | void   | Stop progress on terminal           |
 |                                    |        |                                       |
 
 ## Road map:
@@ -35,3 +35,5 @@ progress.start();
 - set prefix and postfix color
 - set bar color
 - add an event when indicator arrived to end
+- set bar and background char
+- chaining methods
