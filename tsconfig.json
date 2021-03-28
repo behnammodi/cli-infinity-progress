@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "Node",
+    "removeComments": true,
+    "baseUrl": "./src/*",
+    "target": "ES2015",
+    "outDir": "./",
+    "declaration": true,
+    "module": "CommonJS"
+  },
+  "include": ["./src"],
+  "exclude": ["node_modules"]
+}

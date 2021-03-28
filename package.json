@@ -1,0 +1,43 @@
+{
+  "name": "cli-infinity-progress",
+  "version": "0.0.0",
+  "description": "Use infinity progress-bar for command-line/terminal",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./index.test",
+    "build": "tsc",
+    "run": "npm run build && node ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/behnammodi/cli-infinity-progress.git"
+  },
+  "author": "Behnam Mohammadi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/behnammodi/cli-infinity-progress/issues"
+  },
+  "homepage": "https://github.com/behnammodi/cli-infinity-progress#readme",
+  "keywords": [
+    "cli",
+    "tty",
+    "terminal",
+    "progress",
+    "progressbar",
+    "multibar",
+    "bar",
+    "status",
+    "statusbar",
+    "utility",
+    "widget"
+  ],
+  "dependencies": {
+    "cli-cursor": "^3.1.0",
+    "colors": "^1.4.0",
+    "typescript": "^4.2.3"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.37",
+    "tlence": "^1.2.1"
+  }
+}
