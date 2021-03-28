@@ -1,0 +1,17 @@
+.husky
+
+node_modules
+
+src
+
+.gitignore
+
+.huskyrc.js
+
+.prettierrc.js
+
+index.test.js
+
+lint-staged.config.js
+
+tsconfig.json

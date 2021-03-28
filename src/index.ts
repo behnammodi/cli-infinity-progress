@@ -1,5 +1,5 @@
-const colors = require("colors");
-const cliCursor = require("cli-cursor");
+const colors = require('colors');
+const cliCursor = require('cli-cursor');
 
 const WIDTH: number = 60;
 const FRAME: number = 1000 / 25;
@@ -20,22 +20,22 @@ class CLIInfinityProgress implements CLIInfinityProgress {
 
   render() {
     let leftSize = this.currentIndex - INDICATOR_SIZE;
-    let left = "";
+    let left = '';
     if (leftSize > 0) {
-      left = "🀆".repeat(leftSize);
+      left = '🀆'.repeat(leftSize);
     } else {
       leftSize = 0;
     }
 
     let rightSize = WIDTH - this.currentIndex;
-    let right = "";
+    let right = '';
     if (rightSize > 0) {
-      right = "🀆".repeat(rightSize);
+      right = '🀆'.repeat(rightSize);
     } else {
       rightSize = 0;
     }
 
-    const dots = "🀫".repeat(WIDTH - (leftSize + rightSize));
+    const dots = '🀫'.repeat(WIDTH - (leftSize + rightSize));
 
     this.currentIndex++;
     if (this.currentIndex > WIDTH + INDICATOR_SIZE) {
@@ -50,7 +50,7 @@ class CLIInfinityProgress implements CLIInfinityProgress {
 
   start() {
     cliCursor.hide();
-    process.stdout.write("\n");
+    process.stdout.write('\n');
     this.intervalId = setInterval(this.render.bind(this), FRAME);
   }
 
