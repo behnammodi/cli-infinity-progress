@@ -1,4 +1,5 @@
 # A infinity progress bar for terminal
+![cli-infinity-progress](https://user-images.githubusercontent.com/1549069/112765222-6a7f9a00-9021-11eb-811a-76abcaee1139.gif)
 
 # Install
 ```bash
