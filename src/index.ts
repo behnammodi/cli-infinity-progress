@@ -9,6 +9,11 @@ interface CLIInfinityProgress {
   barChar: string;
   backgroundChar: string;
   direction: Direction;
+  header: string;
+  footer: string;
+  setHeader(content: string): CLIInfinityProgress;
+  setFooter(content: string): CLIInfinityProgress;
+  setBarChar(char: string): CLIInfinityProgress;
   setBarChar(char: string): CLIInfinityProgress;
   setBackgroundChar(char: string): CLIInfinityProgress;
   setDirectionRightToLeft(): CLIInfinityProgress;
@@ -28,6 +33,8 @@ enum Direction {
 
 const log = logUpdate.create(process.stdout, { showCursor: false });
 
+const NEW_LINE = '\n';
+
 class CLIInfinityProgress implements CLIInfinityProgress {
   #size = 60;
   #barSize = 20;
@@ -37,6 +44,18 @@ class CLIInfinityProgress implements CLIInfinityProgress {
   #barChar = '🀫';
   #backgroundChar = '🀆';
   #direction = Direction.LeftToRight;
+  #header;
+  #footer;
+
+  setHeader(content) {
+    this.#header = content;
+    return this;
+  }
+
+  setFooter(content) {
+    this.#footer = content;
+    return this;
+  }
 
   setBarChar(char = this.#barChar) {
     this.#barChar = char;
@@ -141,7 +160,19 @@ class CLIInfinityProgress implements CLIInfinityProgress {
       this.#currentIndex = 0;
     }
 
-    log(`\r${colors.gray(left)}${colors.green(dots)}${colors.gray(right)}`);
+    let content = '';
+
+    if (this.#header) {
+      content += this.#header + NEW_LINE;
+    }
+
+    content += `${colors.gray(left)}${colors.green(dots)}${colors.gray(right)}`;
+
+    if (this.#footer) {
+      content += NEW_LINE + this.#footer;
+    }
+
+    log(content);
   }
 }
 

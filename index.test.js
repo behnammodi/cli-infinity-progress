@@ -38,4 +38,13 @@ const { delay } = require('tlence');
   progress.stop();
 
   console.log('\n');
+
+  console.log('\nTest with header and footer and stop after 2s\n');
+  const progressWithHeaderAndFooter = new CLIInfinityProgress();
+  progressWithHeaderAndFooter
+    .setHeader('Loading ...')
+    .setFooter('Please be patient.')
+    .start();
+  await delay(2000);
+  progressWithHeaderAndFooter.stop();
 })();

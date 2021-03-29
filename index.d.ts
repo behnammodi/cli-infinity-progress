@@ -7,6 +7,11 @@ interface CLIInfinityProgress {
   barChar: string;
   backgroundChar: string;
   direction: Direction;
+  header: string;
+  footer: string;
+  setHeader(content: string): CLIInfinityProgress;
+  setFooter(content: string): CLIInfinityProgress;
+  setBarChar(char: string): CLIInfinityProgress;
   setBarChar(char: string): CLIInfinityProgress;
   setBackgroundChar(char: string): CLIInfinityProgress;
   setDirectionRightToLeft(): CLIInfinityProgress;
