@@ -42,7 +42,9 @@ setFooter(content: string): CLIInfinityProgress;
 | .remove()                  | this   | Remove progress from terminal                               |
 | .stop()                    | this   | Stop progress on terminal                                   |
 
-You can call all methods as chaining ex:
+<br />
+
+## You can call all methods as chaining ex:
 
 ```js
 progress
