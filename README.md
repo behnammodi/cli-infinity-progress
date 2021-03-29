@@ -27,12 +27,10 @@ progress.start();
 | .setDirectionLeftToRight() | this   | Progress start from left                  |
 | .setSize(60)               | this   | Set progress size default is 60           |
 | .setBarSize(20)            | this   | Set bar size default is 20                |
-| .setRefreshRate(1000 / 25) | this   | Set refresh rate default is 1000 / 25     |
+| .setRefreshRate(1000 / 25) | this   | Set refresh rate default is (1000 / 25)ms |
 | .start()                   | this   | Start progress                            |
 | .remove()                  | this   | Remove progress from terminal             |
 | .stop()                    | this   | Stop progress on terminal                 |
-
-
 
 You can call all methods as chaining ex:
 
@@ -46,6 +44,7 @@ progress
   .setRefreshRate(100)
   .start();
 ```
+
 Result:
 
 ![cli-infinity-progress-2](https://user-images.githubusercontent.com/1549069/112776419-db8c7500-9054-11eb-9459-c765db51746c.gif)
