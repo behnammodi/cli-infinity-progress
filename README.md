@@ -21,17 +21,30 @@ progress.start();
 
 | Name                               | Return | Desc                                      |
 | ---------------------------------- | ------ | ----------------------------------------- |
-| progress.setBarChar('🚕')          | void   | Set bar char                              |
-| progress.setBackgroundChar('-')    | void   | Set background char                       |
-| progress.setDirectionRightToLeft() | void   | Progress start from right default is left |
-| progress.setDirectionLeftToRight() | void   | Progress start from left                  |
-| progress.setSize(60)               | void   | Set progress size default is 60           |
-| progress.setBarSize(20)            | void   | Set bar size default is 20                |
-| progress.setRefreshRate(1000 / 25) | void   | Set refresh rate default is 1000 / 25     |
-| progress.start()                   | void   | Start progress                            |
-| progress.remove()                  | void   | Remove progress from terminal             |
-| progress.stop()                    | void   | Stop progress on terminal                 |
+| progress.setBarChar('🚕')          | this   | Set bar char                              |
+| progress.setBackgroundChar('-')    | this   | Set background char                       |
+| progress.setDirectionRightToLeft() | this   | Progress start from right default is left |
+| progress.setDirectionLeftToRight() | this   | Progress start from left                  |
+| progress.setSize(60)               | this   | Set progress size default is 60           |
+| progress.setBarSize(20)            | this   | Set bar size default is 20                |
+| progress.setRefreshRate(1000 / 25) | this   | Set refresh rate default is 1000 / 25     |
+| progress.start()                   | this   | Start progress                            |
+| progress.remove()                  | this   | Remove progress from terminal             |
+| progress.stop()                    | this   | Stop progress on terminal                 |
 |                                    |        |                                           |
+
+You can call all methods as chaining ex:
+
+```js
+progress
+  .setBarChar('🚕')
+  .setBackgroundChar('_')
+  .setDirectionRightToLeft()
+  .setSize(14)
+  .setBarSize(1)
+  .setRefreshRate(100)
+  .start();
+```
 
 ## Road map:
 

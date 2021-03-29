@@ -9,16 +9,16 @@ interface CLIInfinityProgress {
   barChar: string;
   backgroundChar: string;
   direction: Direction;
-  setBarChar(char: string): void;
-  setBackgroundChar(char: string): void;
-  setDirectionRightToLeft(): void;
-  setDirectionLeftToRight(): void;
-  setSize(size: number): void;
-  setBarSize(size: number): void;
-  setRefreshRate(rate: number): void;
-  start(): void;
-  remove(): void;
-  stop(): void;
+  setBarChar(char: string): CLIInfinityProgress;
+  setBackgroundChar(char: string): CLIInfinityProgress;
+  setDirectionRightToLeft(): CLIInfinityProgress;
+  setDirectionLeftToRight(): CLIInfinityProgress;
+  setSize(size: number): CLIInfinityProgress;
+  setBarSize(size: number): CLIInfinityProgress;
+  setRefreshRate(rate: number): CLIInfinityProgress;
+  start(): CLIInfinityProgress;
+  remove(): CLIInfinityProgress;
+  stop(): CLIInfinityProgress;
 }
 
 enum Direction {
@@ -40,18 +40,22 @@ class CLIInfinityProgress implements CLIInfinityProgress {
 
   setBarChar(char = this.#barChar) {
     this.#barChar = char;
+    return this;
   }
 
   setBackgroundChar(char = this.#backgroundChar) {
     this.#backgroundChar = char;
+    return this;
   }
 
   setDirectionRightToLeft() {
     this.#direction = Direction.RightToLeft;
+    return this;
   }
 
   setDirectionLeftToRight() {
     this.#direction = Direction.LeftToRight;
+    return this;
   }
 
   setSize(size = 60) {
@@ -59,6 +63,7 @@ class CLIInfinityProgress implements CLIInfinityProgress {
       throw 'setSize: size must be greater than 0';
     }
     this.#size = size;
+    return this;
   }
 
   setBarSize(size = 20) {
@@ -66,6 +71,7 @@ class CLIInfinityProgress implements CLIInfinityProgress {
       throw 'setBarSize: size must be greater than 0';
     }
     this.#barSize = size;
+    return this;
   }
 
   setRefreshRate(rate = 1000 / 25) {
@@ -73,6 +79,7 @@ class CLIInfinityProgress implements CLIInfinityProgress {
       throw `setRefreshRate: rate must be greater than ${1000 / 60}`;
     }
     this.#refreshRate = rate;
+    return this;
   }
 
   start() {
@@ -80,15 +87,18 @@ class CLIInfinityProgress implements CLIInfinityProgress {
     this.#currentIndex = 0;
     clearInterval(this.#intervalId);
     this.#intervalId = setInterval(this.render.bind(this), this.#refreshRate);
+    return this;
   }
 
   remove() {
     const clean = true;
     this.reset(clean);
+    return this;
   }
 
   stop() {
     this.reset();
+    return this;
   }
 
   private reset(clean: boolean = false) {

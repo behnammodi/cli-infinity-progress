@@ -25,13 +25,15 @@ const { delay } = require('tlence');
   progress.stop();
 
   console.log('Test width custom char');
-  progress.setBarChar('🚕');
-  progress.setBackgroundChar('_');
-  progress.setDirectionRightToLeft();
-  progress.setSize(14);
-  progress.setBarSize(1);
-  progress.setRefreshRate(100);
-  progress.start();
+  progress
+    .setBarChar('🚕')
+    .setBackgroundChar('_')
+    .setDirectionRightToLeft()
+    .setSize(14)
+    .setBarSize(1)
+    .setRefreshRate(100)
+    .start();
+
   await delay(3000);
   progress.stop();
 })();
