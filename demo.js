@@ -1,4 +1,5 @@
 const CLIInfinityProgress = require('./index');
+const colors = require('./colors');
 
 const version = process.argv.find((value) => value.length === 1) || '1';
 
@@ -27,8 +28,9 @@ if (version === '1') {
     console.log('\n');
 
     progress
+      .setBackgroundColor(colors.yellow)
       .setHeader('Loading ...')
-      .setFooter('\nPlease be patient, Cab is coming.')
+      .setFooter('\nPlease be patient.')
       .setBarChar('🚕')
       .setBackgroundChar('_')
       .setDirectionRightToLeft()
@@ -36,6 +38,8 @@ if (version === '1') {
       .setBarSize(1)
       .setRefreshRate(100)
       .start();
+
+    setTimeout(() => progress.setFooter('\nWoo, Cab is coming.'), 3000);
   })();
   return;
 } else {

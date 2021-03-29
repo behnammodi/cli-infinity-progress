@@ -1,4 +1,7 @@
+declare type Color = (content: string) => string;
 interface CLIInfinityProgress {
+  barColor: Color;
+  backgroundColor: Color;
   size: number;
   barSize: number;
   refreshRate: number;
@@ -9,6 +12,8 @@ interface CLIInfinityProgress {
   direction: Direction;
   header: string;
   footer: string;
+  setBarColor(color: Color): CLIInfinityProgress;
+  setBackgroundColor(color: Color): CLIInfinityProgress;
   setHeader(content: string): CLIInfinityProgress;
   setFooter(content: string): CLIInfinityProgress;
   setBarChar(char: string): CLIInfinityProgress;

@@ -1,26 +1,36 @@
 const CLIInfinityProgress = require('./index');
+const colors = require('./colors');
 const { delay } = require('tlence');
 
+console.log(CLIInfinityProgress, require('./index'));
+
 (async () => {
-  console.log('Test start and stop after 4s\n');
   const progress = new CLIInfinityProgress();
+
+  console.log('Test start and stop after 4s\n');
   progress.start();
   await delay(4000);
   progress.stop();
 
   console.log('\nTest start with specific config and remove after 1s\n');
-  progress.setSize(20);
-  progress.setBarSize(5);
-  progress.setRefreshRate(50);
-  progress.start();
+  progress
+    .setBarColor(colors.green)
+    .setBackgroundColor(colors.yellow)
+    .setSize(20)
+    .setBarSize(5)
+    .setRefreshRate(50)
+    .start();
   await delay(1000);
   progress.remove();
 
   console.log('\nTest width minimum size and stop after 3s\n');
-  progress.setSize(1);
-  progress.setBarSize(1);
-  progress.setRefreshRate(100);
-  progress.start();
+  progress
+    .setBarColor(/* reset color */)
+    .setBackgroundColor(/* reset color */)
+    .setSize(1)
+    .setBarSize(1)
+    .setRefreshRate(100)
+    .start();
   await delay(3000);
   progress.stop();
 

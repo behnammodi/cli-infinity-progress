@@ -1,6 +1,12 @@
 const colors = require('colors/safe');
 const logUpdate = require('log-update');
+
+// TODO: we can use color own type
+type Color = (content: string) => string;
+
 interface CLIInfinityProgress {
+  barColor: Color;
+  backgroundColor: Color;
   size: number;
   barSize: number;
   refreshRate: number;
@@ -11,6 +17,8 @@ interface CLIInfinityProgress {
   direction: Direction;
   header: string;
   footer: string;
+  setBarColor(color: Color): CLIInfinityProgress;
+  setBackgroundColor(color: Color): CLIInfinityProgress;
   setHeader(content: string): CLIInfinityProgress;
   setFooter(content: string): CLIInfinityProgress;
   setBarChar(char: string): CLIInfinityProgress;
@@ -36,6 +44,8 @@ const log = logUpdate.create(process.stdout, { showCursor: false });
 const NEW_LINE = '\n';
 
 class CLIInfinityProgress implements CLIInfinityProgress {
+  #barColor = colors.green;
+  #backgroundColor = colors.gray;
   #size = 60;
   #barSize = 20;
   #refreshRate = 1000 / 25;
@@ -46,6 +56,16 @@ class CLIInfinityProgress implements CLIInfinityProgress {
   #direction = Direction.LeftToRight;
   #header;
   #footer;
+
+  setBarColor(color = colors.green) {
+    this.#barColor = color;
+    return this;
+  }
+
+  setBackgroundColor(color = colors.gray) {
+    this.#backgroundColor = color;
+    return this;
+  }
 
   setHeader(content) {
     this.#header = content;
@@ -166,7 +186,9 @@ class CLIInfinityProgress implements CLIInfinityProgress {
       content += this.#header + NEW_LINE;
     }
 
-    content += `${colors.gray(left)}${colors.green(dots)}${colors.gray(right)}`;
+    content += `${this.#backgroundColor(left)}${this.#barColor(
+      dots
+    )}${this.#backgroundColor(right)}`;
 
     if (this.#footer) {
       content += NEW_LINE + this.#footer;
