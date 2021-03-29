@@ -1,4 +1,4 @@
-const colors = require('colors');
+const colors = require('colors/safe');
 const cliCursor = require('cli-cursor');
 interface CLIInfinityProgress {
   size: number;
