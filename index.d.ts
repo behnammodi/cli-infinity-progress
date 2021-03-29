@@ -7,16 +7,16 @@ interface CLIInfinityProgress {
   barChar: string;
   backgroundChar: string;
   direction: Direction;
-  setBarChar(char: string): void;
-  setBackgroundChar(char: string): void;
-  setDirectionRightToLeft(): void;
-  setDirectionLeftToRight(): void;
-  setSize(size: number): void;
-  setBarSize(size: number): void;
-  setRefreshRate(rate: number): void;
-  start(): void;
-  remove(): void;
-  stop(): void;
+  setBarChar(char: string): CLIInfinityProgress;
+  setBackgroundChar(char: string): CLIInfinityProgress;
+  setDirectionRightToLeft(): CLIInfinityProgress;
+  setDirectionLeftToRight(): CLIInfinityProgress;
+  setSize(size: number): CLIInfinityProgress;
+  setBarSize(size: number): CLIInfinityProgress;
+  setRefreshRate(rate: number): CLIInfinityProgress;
+  start(): CLIInfinityProgress;
+  remove(): CLIInfinityProgress;
+  stop(): CLIInfinityProgress;
 }
 declare enum Direction {
   LeftToRight = 0,
