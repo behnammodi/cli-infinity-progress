@@ -52,6 +52,4 @@ progress
 - set prefix and postfix color
 - set bar color
 - add an event when indicator arrived to end
-- set bar and background char
-- chaining methods
 - prevent change some values at running
