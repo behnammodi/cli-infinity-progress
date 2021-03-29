@@ -54,6 +54,9 @@ Result:
 - add prefix and postfix on progress
 - set prefix and postfix color
 - set bar color
+- set background color
 - add an event when indicator arrived to end
 - prevent change some values at running
 - decrease size
+- add pause and resume methods
+- add specific loop count
