@@ -2,8 +2,6 @@ const CLIInfinityProgress = require('./index');
 const colors = require('./colors');
 const { delay } = require('tlence');
 
-console.log(CLIInfinityProgress, require('./index'));
-
 (async () => {
   const progress = new CLIInfinityProgress();
 
