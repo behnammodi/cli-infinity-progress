@@ -31,7 +31,8 @@ progress.start();
 | .start()                   | this   | Start progress                            |
 | .remove()                  | this   | Remove progress from terminal             |
 | .stop()                    | this   | Stop progress on terminal                 |
-|                            |        |                                           |
+
+
 
 You can call all methods as chaining ex:
 
