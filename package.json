@@ -7,6 +7,7 @@
   "scripts": {
     "test": "node ./index.test",
     "build": "tsc",
+    "demo": "node ./demo.js",
     "start": "npm run build && npm run test",
     "format": "prettier ./**.* --write --ignore-unknown",
     "preversion": "npm run start",
@@ -42,10 +43,10 @@
     "@commitlint/cli": "^12.0.1",
     "@commitlint/config-conventional": "^12.0.1",
     "@types/node": "^14.14.37",
-    "cli-cursor": "^3.1.0",
     "colors": "^1.4.0",
     "husky": "^5.2.0",
     "lint-staged": "^10.5.4",
+    "log-update": "^4.0.0",
     "prettier": "^2.2.1",
     "tlence": "^1.2.1",
     "typescript": "^4.2.3"

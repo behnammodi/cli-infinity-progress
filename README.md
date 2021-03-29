@@ -60,3 +60,4 @@ Result:
 - decrease size
 - add pause and resume methods
 - add specific loop count
+- add header and footer on progress

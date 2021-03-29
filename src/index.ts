@@ -1,5 +1,5 @@
 const colors = require('colors/safe');
-const cliCursor = require('cli-cursor');
+const logUpdate = require('log-update');
 interface CLIInfinityProgress {
   size: number;
   barSize: number;
@@ -26,7 +26,7 @@ enum Direction {
   RightToLeft,
 }
 
-const write = (content: string): void => void process.stdout.write(content);
+const log = logUpdate.create(process.stdout, { showCursor: false });
 
 class CLIInfinityProgress implements CLIInfinityProgress {
   #size = 60;
@@ -83,7 +83,6 @@ class CLIInfinityProgress implements CLIInfinityProgress {
   }
 
   start() {
-    cliCursor.hide();
     this.#currentIndex = 0;
     clearInterval(this.#intervalId);
     this.#intervalId = setInterval(this.render.bind(this), this.#refreshRate);
@@ -103,8 +102,11 @@ class CLIInfinityProgress implements CLIInfinityProgress {
 
   private reset(clean: boolean = false) {
     clearInterval(this.#intervalId);
-    write(clean ? '\r \n' : '\n');
-    cliCursor.show();
+    if (clean) {
+      log.clear();
+    } else {
+      log.done();
+    }
   }
 
   private render() {
@@ -139,7 +141,7 @@ class CLIInfinityProgress implements CLIInfinityProgress {
       this.#currentIndex = 0;
     }
 
-    write(`\r${colors.gray(left)}${colors.green(dots)}${colors.gray(right)}`);
+    log(`\r${colors.gray(left)}${colors.green(dots)}${colors.gray(right)}`);
   }
 }
 
