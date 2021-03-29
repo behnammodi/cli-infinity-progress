@@ -29,7 +29,7 @@ const { delay } = require('tlence');
     .setBarChar('🚕')
     .setBackgroundChar('_')
     .setDirectionRightToLeft()
-    .setSize(14)
+    .setSize(30)
     .setBarSize(1)
     .setRefreshRate(100)
     .start();

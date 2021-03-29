@@ -19,8 +19,8 @@ progress.start();
 
 ## Methods:
 
-| Name                               | Return | Desc                                      |
-| ---------------------------------- | ------ | ----------------------------------------- |
+| Name                       | Return | Desc                                      |
+| -------------------------- | ------ | ----------------------------------------- |
 | .setBarChar('🚕')          | this   | Set bar char                              |
 | .setBackgroundChar('-')    | this   | Set background char                       |
 | .setDirectionRightToLeft() | this   | Progress start from right default is left |
@@ -31,7 +31,7 @@ progress.start();
 | .start()                   | this   | Start progress                            |
 | .remove()                  | this   | Remove progress from terminal             |
 | .stop()                    | this   | Stop progress on terminal                 |
-|                                    |        |                                           |
+|                            |        |                                           |
 
 You can call all methods as chaining ex:
 
@@ -40,11 +40,14 @@ progress
   .setBarChar('🚕')
   .setBackgroundChar('_')
   .setDirectionRightToLeft()
-  .setSize(14)
+  .setSize(30)
   .setBarSize(1)
   .setRefreshRate(100)
   .start();
 ```
+Result:
+
+![cli-infinity-progress-2](https://user-images.githubusercontent.com/1549069/112776419-db8c7500-9054-11eb-9459-c765db51746c.gif)
 
 ## Road map:
 
