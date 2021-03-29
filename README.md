@@ -56,3 +56,4 @@ Result:
 - set bar color
 - add an event when indicator arrived to end
 - prevent change some values at running
+- decrease size
