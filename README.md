@@ -21,16 +21,16 @@ progress.start();
 
 | Name                               | Return | Desc                                      |
 | ---------------------------------- | ------ | ----------------------------------------- |
-| progress.setBarChar('🚕')          | this   | Set bar char                              |
-| progress.setBackgroundChar('-')    | this   | Set background char                       |
-| progress.setDirectionRightToLeft() | this   | Progress start from right default is left |
-| progress.setDirectionLeftToRight() | this   | Progress start from left                  |
-| progress.setSize(60)               | this   | Set progress size default is 60           |
-| progress.setBarSize(20)            | this   | Set bar size default is 20                |
-| progress.setRefreshRate(1000 / 25) | this   | Set refresh rate default is 1000 / 25     |
-| progress.start()                   | this   | Start progress                            |
-| progress.remove()                  | this   | Remove progress from terminal             |
-| progress.stop()                    | this   | Stop progress on terminal                 |
+| .setBarChar('🚕')          | this   | Set bar char                              |
+| .setBackgroundChar('-')    | this   | Set background char                       |
+| .setDirectionRightToLeft() | this   | Progress start from right default is left |
+| .setDirectionLeftToRight() | this   | Progress start from left                  |
+| .setSize(60)               | this   | Set progress size default is 60           |
+| .setBarSize(20)            | this   | Set bar size default is 20                |
+| .setRefreshRate(1000 / 25) | this   | Set refresh rate default is 1000 / 25     |
+| .start()                   | this   | Start progress                            |
+| .remove()                  | this   | Remove progress from terminal             |
+| .stop()                    | this   | Stop progress on terminal                 |
 |                                    |        |                                           |
 
 You can call all methods as chaining ex:
