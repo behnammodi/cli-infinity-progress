@@ -19,15 +19,19 @@ progress.start();
 
 ## Methods:
 
-| Name                               | Return | Desc                                  |
-| ---------------------------------- | ------ | ------------------------------------- |
-| progress.setSize(60)               | void   | Set progress size default is 60       |
-| progress.setBarSize(20)            | void   | Set bar size default is 20            |
-| progress.setRefreshRate(1000 / 25) | void   | Set refresh rate default is 1000 / 25 |
-| progress.start()                   | void   | Start progress                        |
-| progress.remove()                  | void   | Remove progress from terminal         |
-| progress.stop()                    | void   | Stop progress on terminal           |
-|                                    |        |                                       |
+| Name                               | Return | Desc                                      |
+| ---------------------------------- | ------ | ----------------------------------------- |
+| progress.setBarChar('🚕')          | void   | Set bar char                              |
+| progress.setBackgroundChar('-')    | void   | Set background char                       |
+| progress.setDirectionRightToLeft() | void   | Progress start from right default is left |
+| progress.setDirectionLeftToRight() | void   | Progress start from left                  |
+| progress.setSize(60)               | void   | Set progress size default is 60           |
+| progress.setBarSize(20)            | void   | Set bar size default is 20                |
+| progress.setRefreshRate(1000 / 25) | void   | Set refresh rate default is 1000 / 25     |
+| progress.start()                   | void   | Start progress                            |
+| progress.remove()                  | void   | Remove progress from terminal             |
+| progress.stop()                    | void   | Stop progress on terminal                 |
+|                                    |        |                                           |
 
 ## Road map:
 
@@ -37,3 +41,4 @@ progress.start();
 - add an event when indicator arrived to end
 - set bar and background char
 - chaining methods
+- prevent change some values at running
