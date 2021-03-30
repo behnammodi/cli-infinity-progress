@@ -70,12 +70,6 @@ Result:
 
 ![cli-infinity-progress-5](https://user-images.githubusercontent.com/1549069/112892939-3b375e80-90ef-11eb-8d42-1a02e65dbd6d.gif)
 
-## Road map:
+<br /><br />
 
-- add prefix and postfix on progress
-- set prefix and postfix color
-- add an event when indicator arrived to end
-- prevent change some values at running
-- decrease size
-- add specific loop count
-- add color for footer and header
+[Roadmap](https://github.com/behnammodi/cli-infinity-progress/projects/1)
