@@ -5,9 +5,9 @@
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
-    "test": "node ./index.test",
+    "test": "node --inspect ./index.test",
     "build": "tsc",
-    "demo": "node ./demo.js",
+    "demo": "node --inspect ./demo.js",
     "start": "npm run build && npm run test",
     "format": "prettier ./**.* --write --ignore-unknown",
     "preversion": "npm run start",
