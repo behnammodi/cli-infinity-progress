@@ -1,6 +1,6 @@
 {
   "name": "cli-infinity-progress",
-  "version": "0.6.4",
+  "version": "0.6.5",
   "description": "Use infinity progress-bar for command-line/terminal",
   "main": "index.js",
   "types": "index.d.ts",
