@@ -2,17 +2,19 @@
 
 node_modules
 
+scripts
+
 src
 
 .gitignore
 
-.huskyrc.js
-
 .prettierrc.js
 
-demo.ts
+colors.d.ts
 
 commitlint.config.js
+
+demo.ts
 
 index.test.ts
 
