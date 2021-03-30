@@ -37,7 +37,18 @@
     "status",
     "statusbar",
     "utility",
-    "widget"
+    "widget",
+    "spinner",
+    "spinners",
+    "term",
+    "console",
+    "ascii",
+    "unicode",
+    "loading",
+    "indicator",
+    "busy",
+    "wait",
+    "idle"
   ],
   "dependencies": {
     "@commitlint/cli": "^12.0.1",
