@@ -27,6 +27,8 @@ interface CLIInfinityProgress {
   start(): CLIInfinityProgress;
   remove(): CLIInfinityProgress;
   stop(): CLIInfinityProgress;
+  pause(): CLIInfinityProgress;
+  resume(): CLIInfinityProgress;
 }
 declare enum Direction {
   LeftToRight = 0,
@@ -34,7 +36,8 @@ declare enum Direction {
 }
 declare class CLIInfinityProgress implements CLIInfinityProgress {
   #private;
-  private reset;
+  private startAnimate;
+  private stopAnimate;
   private render;
 }
 export = CLIInfinityProgress;

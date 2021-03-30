@@ -32,6 +32,8 @@ interface CLIInfinityProgress {
   start(): CLIInfinityProgress;
   remove(): CLIInfinityProgress;
   stop(): CLIInfinityProgress;
+  pause(): CLIInfinityProgress;
+  resume(): CLIInfinityProgress;
 }
 
 enum Direction {
@@ -123,29 +125,39 @@ class CLIInfinityProgress implements CLIInfinityProgress {
 
   start() {
     this.#currentIndex = 0;
-    clearInterval(this.#intervalId);
-    this.#intervalId = setInterval(this.render.bind(this), this.#refreshRate);
+    this.stopAnimate();
+    this.startAnimate();
     return this;
   }
 
   remove() {
-    const clean = true;
-    this.reset(clean);
+    this.stopAnimate();
+    log.clear();
     return this;
   }
 
   stop() {
-    this.reset();
+    this.stopAnimate();
+    log.done();
     return this;
   }
 
-  private reset(clean: boolean = false) {
+  pause() {
+    this.stopAnimate();
+    return this;
+  }
+
+  resume() {
+    this.startAnimate();
+    return this;
+  }
+
+  private startAnimate() {
+    this.#intervalId = setInterval(this.render.bind(this), this.#refreshRate);
+  }
+
+  private stopAnimate() {
     clearInterval(this.#intervalId);
-    if (clean) {
-      log.clear();
-    } else {
-      log.done();
-    }
   }
 
   private render() {

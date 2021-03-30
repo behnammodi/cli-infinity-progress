@@ -45,8 +45,6 @@ const { delay } = require('tlence');
   await delay(3000);
   progress.stop();
 
-  console.log('\n');
-
   console.log('\nTest with header and footer and stop after 2s\n');
   const progressWithHeaderAndFooter = new CLIInfinityProgress();
   progressWithHeaderAndFooter
@@ -55,4 +53,16 @@ const { delay } = require('tlence');
     .start();
   await delay(2000);
   progressWithHeaderAndFooter.stop();
+
+  console.log(
+    '\nTest start and pause after 2s and resume after 2s and then stop after 2s'
+  );
+  const pauseableProcess = new CLIInfinityProgress();
+  pauseableProcess.start();
+  await delay(2000);
+  pauseableProcess.pause();
+  await delay(2000);
+  pauseableProcess.resume();
+  await delay(2000);
+  pauseableProcess.stop();
 })();

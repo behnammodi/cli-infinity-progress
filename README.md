@@ -40,6 +40,8 @@ progress.start();
 | .start()                          | this   | Start progress                                                                 |
 | .remove()                         | this   | Remove progress from terminal                                                  |
 | .stop()                           | this   | Stop progress on terminal                                                      |
+| .pause()                          | this   | Pause progress on terminal                                                     |
+| .resume()                         | this   | Resume progress on terminal                                                    |
 
 <br />
 
@@ -75,6 +77,5 @@ Result:
 - add an event when indicator arrived to end
 - prevent change some values at running
 - decrease size
-- add pause and resume methods
 - add specific loop count
 - add color for footer and header
