@@ -10,11 +10,11 @@ src
 
 .prettierrc.js
 
-demo.js
+demo.ts
 
 commitlint.config.js
 
-index.test.js
+index.test.ts
 
 LICENSE
 

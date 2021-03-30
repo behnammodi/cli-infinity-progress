@@ -41,7 +41,6 @@ if (version === '1') {
 
     setTimeout(() => progress.setFooter('\nWoo, Cab is coming.'), 3000);
   })();
-  return;
 } else {
   console.log(`We can not find version ${version} of demo`);
 }
