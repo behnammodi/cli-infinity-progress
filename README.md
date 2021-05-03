@@ -70,6 +70,10 @@ Result:
 
 ![cli-infinity-progress-5](https://user-images.githubusercontent.com/1549069/112892939-3b375e80-90ef-11eb-8d42-1a02e65dbd6d.gif)
 
+<br />
+<a href="https://travis-ci.com/github/behnammodi/cli-infinity-progress">
+  <img src="https://travis-ci.com/behnammodi/cli-infinity-progress.svg?branch=master" alt="Build Status">
+</a>
 <br /><br />
 
 [Roadmap](https://github.com/behnammodi/cli-infinity-progress/projects/1)
