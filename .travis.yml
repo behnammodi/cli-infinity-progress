@@ -4,6 +4,7 @@ node_js:
 install:
   - npm install
 script:
+  - npm run build
   - npm run test
 after_success:
   - echo "script successfully done"
